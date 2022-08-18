@@ -1,0 +1,13 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ListPage from '@/core/components/ListPage';
+import { films } from '@/data/film';
+import '@/css/main.css';
+---
+
+<Layout
+  title="Sam Hamburger | Film"
+  description="Sam Hamburger film, checkout my drone footage"
+>
+  <ListPage title="film" subtitle="checkout my drone footage" items={films} />
+</Layout>

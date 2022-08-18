@@ -1,0 +1,14 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ListPage from '@/core/components/ListPage';
+import { works } from '@/data/works';
+import '@/css/main.css';
+---
+
+<Layout
+  title="Sam Hamburger | Works"
+  description="Sam Hamburger works, checkout stuff I built"
+>
+  <ListPage title="works" subtitle="checkout some stuff I built" items={works}
+  />
+</Layout>

@@ -1,0 +1,13 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ListPage from '@/core/components/ListPage';
+import { blogs } from '@/data/blog';
+import '@/css/main.css';
+---
+
+<Layout
+  title="Sam Hamburger | Blog"
+  description="Sam Hamburger blog, checkout my writings"
+>
+  <ListPage title="blog" subtitle="welcome to my talk space" items={blogs} />
+</Layout>

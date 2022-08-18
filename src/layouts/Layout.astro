@@ -1,0 +1,45 @@
+---
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props as Props;
+const path = new URL(Astro.request.url).pathname;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta
+      name="description"
+      content={description || 'Sam Hamburger portfolio and blog'}
+    />
+    <script is:inline>
+      const appHeight = () => {
+        const doc = document.documentElement;
+        doc.style.setProperty('--doc-height', `${window.innerHeight}px`);
+      };
+
+      window.addEventListener('resize', appHeight);
+      appHeight();
+    </script>
+  </head>
+  <body>
+    <div class="w-screen min-h-full flex flex-col bg-primary text-white">
+      <Navbar path={path} />
+      <main class="flex-1 flex items-center mb-10">
+        <slot />
+      </main>
+    </div>
+    <Footer />
+  </body>
+</html>
