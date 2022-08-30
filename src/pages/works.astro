@@ -1,14 +1,13 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import ListPage from '@/core/components/ListPage';
+import Page from '@/core/components/Page';
 import { works } from '@/data/works';
-import '@/css/main.css';
+import '@/css/main.scss';
 ---
 
 <Layout
   title="Sam Hamburger | Works"
   description="Sam Hamburger works, checkout stuff I built"
 >
-  <ListPage title="works" subtitle="checkout some stuff I built" items={works}
-  />
+  <Page title="works" subtitle="checkout some stuff I built" items={works} />
 </Layout>

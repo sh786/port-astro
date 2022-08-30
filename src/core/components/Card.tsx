@@ -1,10 +1,10 @@
 import type { ParentProps } from 'solid-js';
 
-interface ColumnCardProps extends ParentProps {
+interface CardProps extends ParentProps {
   rootClass?: string;
 }
 
-export default function ColumnCard(props: ColumnCardProps) {
+export default function Card(props: CardProps) {
   return (
     <div
       class={`flex items-center py-2 space-y-1 rounded-md shadow-md bg-primaryDark bg-opacity-50 ${

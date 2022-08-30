@@ -4,9 +4,9 @@ import onebiteImg from '@/img/onebite.png';
 import coasterImg from '@/img/coaster.png';
 import mlbPostseasonImg from '@/img/mlbpostseason.png';
 import pittHomesImg from '@/img/pitthomes.png';
-import type { ListPageItemProps } from '@/core/components/ListPageItem';
+import type { PageItemProps } from '@/core/components/PageItem';
 
-export const works: ListPageItemProps[] = [
+export const works: PageItemProps[] = [
   {
     title: 'React-Tac-Toe',
     description:

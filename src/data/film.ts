@@ -1,7 +1,7 @@
 import pittsburghImg from '@/img/pittsburgh.png';
-import type { ListPageItemProps } from '@/core/components/ListPageItem';
+import type { PageItemProps } from '@/core/components/PageItem';
 
-export const films: ListPageItemProps[] = [
+export const films: PageItemProps[] = [
   {
     title: 'Pittsburgh',
     description:

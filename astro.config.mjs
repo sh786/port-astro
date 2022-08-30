@@ -14,4 +14,10 @@ export default defineConfig({
     }),
     sitemap(),
   ],
+  markdown: {
+    shikiConfig: {
+      theme: 'dracula',
+      wrap: true,
+    },
+  },
 });

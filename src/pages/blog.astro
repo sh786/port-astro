@@ -1,13 +1,39 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import ListPage from '@/core/components/ListPage';
-import { blogs } from '@/data/blog';
-import '@/css/main.css';
+import Page from '@/core/components/Page';
+import '@/css/main.scss';
+import type { PageItemProps } from '@/core/components/PageItem';
+
+export interface BlogFrontmatter {
+  title: string;
+  date: string;
+  meta: string;
+  tags: string[];
+  path: string;
+  imageUrl: string;
+  devCommUrl: string;
+}
+
+const blogs = await Astro.glob<BlogFrontmatter>('../data/blogs/*.md');
+
+const mappedBlogsToPageItems = blogs.map((blog) => {
+  const { title, date, meta, path } = blog.frontmatter;
+  return {
+    title,
+    description: date,
+    meta,
+    ctaPath: `/blog/${path}`,
+  } as PageItemProps;
+});
 ---
 
 <Layout
   title="Sam Hamburger | Blog"
   description="Sam Hamburger blog, checkout my writings"
 >
-  <ListPage title="blog" subtitle="welcome to my talk space" items={blogs} />
+  <Page
+    title="blog"
+    subtitle="welcome to my talk space"
+    items={mappedBlogsToPageItems}
+  />
 </Layout>

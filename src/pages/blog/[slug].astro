@@ -1,0 +1,34 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Page from '@/core/components/Page';
+import '@/css/main.scss';
+import type { BlogFrontmatter } from '../blog.astro';
+
+export async function getStaticPaths() {
+  const blogs = await Astro.glob<BlogFrontmatter>('../../data/blogs/*.md');
+
+  return blogs.map((blog) => ({
+    params: {
+      slug: blog.frontmatter.path,
+    },
+    props: {
+      blog,
+    },
+  }));
+}
+
+const { Content, frontmatter } = Astro.props.blog;
+---
+
+<Layout title={frontmatter.title} description={frontmatter.meta}>
+  <Page
+    title={frontmatter.title}
+    subtitle={frontmatter.meta}
+    tags={frontmatter.tags}
+  >
+    <div class="md-wrapper">
+      <img src={frontmatter.imageUrl} alt={frontmatter.title} />
+      <Content />
+    </div>
+  </Page>
+</Layout>
