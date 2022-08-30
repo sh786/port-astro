@@ -43,14 +43,16 @@ export default function Navbar(props: NavbarProps) {
           <ul class="flex space-x-4 md:space-x-12 text-xl md:text-2xl text-white">
             <For each={NAV_ITEMS}>
               {({ text, path }) => (
-                <a
-                  href={path}
-                  class={`${
-                    path === props.path ? 'text-accent' : ''
-                  } hover:text-accentDark`}
-                >
-                  <li>{text}</li>
-                </a>
+                <li>
+                  <a
+                    href={path}
+                    class={`${
+                      path === props.path ? 'text-accent' : ''
+                    } hover:text-accentDark`}
+                  >
+                    {text}
+                  </a>
+                </li>
               )}
             </For>
           </ul>
