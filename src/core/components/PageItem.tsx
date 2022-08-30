@@ -27,7 +27,7 @@ export default function PageItem(props: PageItemProps) {
         <img
           src={props.imagePath}
           alt={`${props.title} thumbnail`}
-          class="w-36 h-24 md:w-56 md:h-36"
+          class="w-56 h-36"
         />
       </Show>
       <div class="flex flex-col flex-1 items-start px-6 space-y-2">
