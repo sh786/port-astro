@@ -17,18 +17,18 @@ export interface ListPageItemProps {
 
 export default function ListPageItem(props: ListPageItemProps) {
   return (
-    <ColumnCard rootClass="h-36">
+    <ColumnCard>
       <Show when={!!props.imagePath}>
         <img
           src={props.imagePath}
           alt={`${props.title} thumbnail`}
-          class="w-56 h-36"
+          class="w-40 h-24 md:w-56 md:h-36"
         />
       </Show>
       <div class="flex flex-col px-6 space-y-2">
-        <h2 class="text-2xl text-accentLight">{props.title}</h2>
-        <span class="text-md">{props.description}</span>
-        <span class="text-sm">{props.meta}</span>
+        <h2 class="text-xl md:text-2xl text-accentLight">{props.title}</h2>
+        <span class="text-xs md:text-md">{props.description}</span>
+        <span class="text-xs md:text-sm">{props.meta}</span>
       </div>
       <div class="flex items-center space-x-5 ml-auto px-6">
         <Show when={!!props.webUrl}>

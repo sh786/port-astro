@@ -7,7 +7,7 @@ interface ColumnCardProps extends ParentProps {
 export default function ColumnCard(props: ColumnCardProps) {
   return (
     <div
-      class={`flex items-center space-y-1 rounded-md shadow-md bg-primaryDark bg-opacity-50 ${
+      class={`flex items-center py-2 space-y-1 rounded-md shadow-md bg-primaryDark bg-opacity-50 ${
         props.rootClass || ''
       }`}
     >

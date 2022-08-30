@@ -10,7 +10,7 @@ interface ListPageProps extends ParentProps {
 
 export default function ListPage(props: ListPageProps) {
   return (
-    <div class="flex flex-col m-auto mt-6 space-y-3 w-full max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl">
+    <div class="flex flex-col m-auto mt-6 px-4 space-y-3 w-full max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl">
       <h1 class="text-5xl">{props.title}</h1>
       <span class="text-xl tracking-wide">{props.subtitle}</span>
       <hr class="opacity-10" />
