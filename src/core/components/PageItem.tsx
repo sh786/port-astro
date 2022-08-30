@@ -18,7 +18,8 @@ export interface PageItemProps {
 }
 
 export default function PageItem(props: PageItemProps) {
-  const hasLinks = !!props.webUrl || !!props.githubUrl || !!props.videoUrl;
+  const hasLinks = () =>
+    !!props.webUrl || !!props.githubUrl || !!props.videoUrl;
 
   return (
     <Card>
@@ -26,7 +27,7 @@ export default function PageItem(props: PageItemProps) {
         <img
           src={props.imagePath}
           alt={`${props.title} thumbnail`}
-          class="w-40 h-24 md:w-56 md:h-36"
+          class="w-36 h-24 md:w-56 md:h-36"
         />
       </Show>
       <div class="flex flex-col flex-1 items-start px-6 space-y-2">
@@ -34,8 +35,8 @@ export default function PageItem(props: PageItemProps) {
         <span class="text-xs md:text-base">{props.description}</span>
         <span class="text-xs md:text-base">{props.meta}</span>
       </div>
-      <Show when={hasLinks}>
-        <div class="flex items-center space-x-5 ml-auto px-6">
+      <Show when={hasLinks()}>
+        <div class="flex items-center space-x-3 md:space-x-5 ml-auto px-2 md:px-6">
           <Show when={!!props.webUrl}>
             <a href={props.webUrl} class="w-7 h-7 hover:text-accentDark">
               <LinkIcon />
