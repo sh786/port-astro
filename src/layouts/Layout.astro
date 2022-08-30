@@ -5,9 +5,10 @@ import Footer from '@/components/Footer';
 export interface Props {
   title: string;
   description?: string;
+  isCenterJustified?: boolean;
 }
 
-const { title, description } = Astro.props as Props;
+const { title, description, isCenterJustified } = Astro.props as Props;
 const path = new URL(Astro.request.url).pathname;
 ---
 
@@ -36,7 +37,11 @@ const path = new URL(Astro.request.url).pathname;
   <body>
     <div class="w-screen min-h-full flex flex-col bg-primary text-white">
       <Navbar path={path} />
-      <main class="flex-1 flex flex-col items-center mb-10">
+      <main
+        class={`flex-1 flex flex-col items-center mb-10 ${
+          isCenterJustified ? 'justify-center' : ''
+        }`}
+      >
         <slot name="breadcrumb" />
         <slot />
       </main>
