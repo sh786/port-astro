@@ -1,4 +1,5 @@
 import { For } from 'solid-js';
+import '@/css/Navbar.scss';
 
 type NavItem = {
   text: string;
@@ -31,8 +32,8 @@ interface NavbarProps {
 export default function Navbar(props: NavbarProps) {
   return (
     <>
-      <div class="w-full flex items-center p-3 md:px-5 md:py-3">
-        <div>
+      <div class="nav-container bg-primaryDark rounded-b-2xl shadow-sm flex items-center p-3 md:px-5 md:py-3">
+        <div class="mr-4">
           <a href="/">
             <span class="max-h text-3xl md:text-4xl text-white">
               s<span class="text-accent">/</span>h
