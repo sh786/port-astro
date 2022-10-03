@@ -1,5 +1,4 @@
 import { For } from 'solid-js';
-import '@/css/Navbar.scss';
 
 type NavItem = {
   text: string;
