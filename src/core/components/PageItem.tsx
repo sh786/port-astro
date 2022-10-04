@@ -15,6 +15,7 @@ export interface PageItemProps {
   imagePath?: string;
   ctaPath?: string;
   ctaText?: string;
+  order: number;
 }
 
 export default function PageItem(props: PageItemProps) {
@@ -22,7 +23,7 @@ export default function PageItem(props: PageItemProps) {
     !!props.webUrl || !!props.githubUrl || !!props.videoUrl;
 
   return (
-    <Card>
+    <Card order={props.order}>
       <Show when={!!props.imagePath}>
         <img
           src={props.imagePath}

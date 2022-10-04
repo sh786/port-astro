@@ -25,6 +25,7 @@ const { Content, frontmatter } = Astro.props.blog;
     title={frontmatter.title}
     subtitle={frontmatter.meta}
     tags={frontmatter.tags}
+    client:only="solid-js"
   >
     <div class="md-wrapper">
       <img src={frontmatter.imageUrl} alt={frontmatter.title} />

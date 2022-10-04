@@ -1,38 +1,12 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Page from '@/core/components/Page';
-import HighlightedText from '@/core/components/HighlightedText';
 import '@/css/main.scss';
-import { uses } from '@/data/uses';
 ---
 
 <Layout
   title="Sam Hamburger | Uses"
   description="Sam Hamburger uses, checkout what tech I use"
 >
-  <Page title="uses" subtitle="see what tech I use">
-    <div class="flex flex-col space-y-4">
-      {
-        uses.map((uses) => (
-          <div class="flex flex-col space-y-1">
-            <h2 class="text-accent underline text-xl tracking-wide">
-              {uses.title}
-            </h2>
-            <div class="flex space-x-10">
-              <div class="flex flex-col space-y-1">
-                {uses.leftColItems.map((item) => (
-                  <HighlightedText text={item} char="/" />
-                ))}
-              </div>
-              <div class="flex flex-col space-y-1">
-                {uses.rightColItems.map((item) => (
-                  <HighlightedText text={item} char="/" />
-                ))}
-              </div>
-            </div>
-          </div>
-        ))
-      }
-    </div>
-  </Page>
+  <Page title="uses" subtitle="see what tech I use" client:only="solid-js" />
 </Layout>

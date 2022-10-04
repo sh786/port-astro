@@ -9,5 +9,10 @@ import '@/css/main.scss';
   title="Sam Hamburger | Film"
   description="Sam Hamburger film, checkout my drone footage"
 >
-  <Page title="film" subtitle="checkout my drone footage" items={films} />
+  <Page
+    title="film"
+    subtitle="checkout my drone footage"
+    items={films}
+    client:only="solid-js"
+  />
 </Layout>
